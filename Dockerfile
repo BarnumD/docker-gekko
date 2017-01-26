@@ -36,10 +36,7 @@ RUN mkdir -p /usr/src/gekko
 WORKDIR /usr/src/gekko
 
 #Download & setup Gekko trading bot
-#RUN git clone -b develop https://github.com/BarnumD/gekko.git .; \
 RUN git clone -b stable https://github.com/askmike/gekko.git .; \
-#RUN git clone -b stable https://github.com/askmike/gekko.git .; \
-    #git reset --hard a1844738d86ea44797e993bef8e0c2a49e428463; \
     npm install
 
 #Setup auto start service
@@ -49,7 +46,7 @@ RUN mkdir /etc/service/gekko; ln -s /service_start_gekko.sh /etc/service/gekko/r
 ########################
 
 
-#Enable redis plugin
-RUN npm install redis@0.10.0
+#Enable node plugins
+RUN npm install redis@0.10.0 talib@1.0.2 pg
 
 CMD ["/sbin/my_init"]
