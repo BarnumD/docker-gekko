@@ -47,8 +47,7 @@ RUN mkdir -p /etc/service/gekko; ln -s /service_start_gekko.sh /etc/service/gekk
     chmod 750 /service_start_gekko.sh
 ########################
 
-
-#Enable redis plugin
+#Enable plugins
 RUN npm install redis@0.10.0 talib@1.0.2 pg
 
 VOLUME /usr/src/gekko/history
