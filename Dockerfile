@@ -49,7 +49,7 @@ RUN mkdir -p /etc/service/gekko; ln -s /service_start_gekko.sh /etc/service/gekk
 
 
 #Enable redis plugin
-RUN npm install redis@0.10.0
+RUN npm install redis@0.10.0 talib@1.0.2 pg
 
 VOLUME /usr/src/gekko/history
 
